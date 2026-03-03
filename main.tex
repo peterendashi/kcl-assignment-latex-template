@@ -1,4 +1,4 @@
-\documentclass[a4paper, oneside, UKenglish]{article}
+\documentclass[a4paper, oneside]{article}
 
 
 %% Encoding
@@ -89,6 +89,21 @@
     \par\vspace{0.3em}
 }
 
+\newsavebox{\solutionbox}
+
+\newenvironment{solution}{                  % Solution environment
+    \par\vspace{0.5em}%
+    \setlength{\fboxsep}{8pt}%
+    \noindent\begin{lrbox}{\solutionbox}%
+    \begin{minipage}{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}%
+    {\sffamily\bfseries Solution}\par\vspace{0.4em}%
+}{%
+    \end{minipage}%
+    \end{lrbox}%
+    \noindent\fbox{\usebox{\solutionbox}}%
+    \par\vspace{0.5em}%
+}
+
 
 %% Miscellaneous
 \renewcommand{\qedsymbol}{\(\blacksquare\)}
@@ -97,7 +112,7 @@
 %% Document metadata
 \newcommand{\coursetitle}{Coursework Sheet \#3}
 \newcommand{\coursecode}{4CCP1300}
-\newcommand{\studentid}{kNumber}
+\newcommand{\studentid}{k25009302}
 
 \begin{document}
 
@@ -113,17 +128,21 @@
 
 \begin{questions}
 
-    \question{Prove the following.}
-    \begin{parts}
-        \part{Show that $1 + 1 = 2$.}
-        Solution to part (a) here.
+    \question{Sketch and describe the following surface, written in cylindrical coordinates.}
+    \[
+        x = \begin{cases}
+            \rho = 4-2z \\
+            \phi \in [0, 2\pi] \\
+            z \in [0, 1]
+        \end{cases}
+    \]
 
-        \part{Show that $2 + 2 = 4$.}
-        Solution to part (b) here.
-    \end{parts}
+    \begin{solution}
+        solution goes here
+    \end{solution}
 
     \question{Prove that $\N \subset \Z$.}
-    Solution here.
+    \part{hello}
 
 \end{questions}
 
