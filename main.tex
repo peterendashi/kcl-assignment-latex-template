@@ -1,0 +1,130 @@
+\documentclass[a4paper, oneside, UKenglish]{article}
+
+
+%% Encoding
+\usepackage[utf8]{inputenx} % Source code
+\usepackage[T1]{fontenc}    % PDF
+
+
+%% Fonts and typography
+\usepackage{lmodern}           % Latin Modern Roman
+\usepackage[scaled]{beramono}  % Bera Mono (Bitstream Vera Sans Mono)
+\renewcommand{\sfdefault}{phv} % Helvetica
+\usepackage[final]{microtype}  % Improved typography
+\usepackage[margin=1in]{geometry}  % 1 inch margins
+\raggedright
+
+%% Mathematics
+\usepackage{amssymb}   % Extra symbols
+\usepackage{amsthm}    % Theorem-like environments
+\usepackage{thmtools}  % Theorem-like environments
+\usepackage{mathtools} % Fonts and environments for mathematical formulae
+\usepackage{mathrsfs}  % Script font with \mathscr{}
+
+
+%% Delimiters
+\DeclarePairedDelimiter{\p}{\lparen}{\rparen}   % Parenthesis
+\DeclarePairedDelimiter{\set}{\lbrace}{\rbrace} % Set
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}   % Absolute value
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}  % Norm
+
+
+%% Operators
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\E}{E}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+
+
+%% New commands for sets
+\newcommand{\N}{\mathbb{N}}   % Natural numbers
+\newcommand{\Z}{\mathbb{Z}}   % Integers
+\newcommand{\Q}{\mathbb{Q}}   % Rational numbers
+\newcommand{\R}{\mathbb{R}}   % Real numbers
+\newcommand{\C}{\mathbb{C}}   % Complex numbers
+\newcommand{\A}{\mathbb{A}}   % Affine space
+\renewcommand{\P}{\mathbb{P}} % Projective space
+
+
+%% New commands for vectors
+\renewcommand{\a}{\mathbf{a}}
+\renewcommand{\b}{\mathbf{b}}
+\renewcommand{\c}{\mathbf{c}}
+\renewcommand{\v}{\mathbf{v}}
+\newcommand{\w}{\mathbf{w}}
+\newcommand{\x}{\mathbf{x}}
+\newcommand{\y}{\mathbf{y}}
+\newcommand{\z}{\mathbf{z}}
+\newcommand{\0}{\mathbf{0}}
+\newcommand{\1}{\mathbf{1}}
+
+
+%% Questions and Parts
+\newcounter{questioncounter}
+\newcounter{partcounter}[questioncounter]   % resets each new question
+
+\newenvironment{questions}{                 % Questions environment
+    \setcounter{questioncounter}{0}
+}{}
+
+\newcommand{\question}[1]{                  % Question header 
+    \stepcounter{questioncounter}
+    \setcounter{partcounter}{0}
+    \vspace{1em}
+    {\sffamily\bfseries Question \thequestioncounter
+    \ifx&#1&\else: #1\fi}
+    \par\vspace{0.3em}
+}
+
+\newenvironment{parts}{                     % Parts environment
+    \setcounter{partcounter}{0}
+}{}
+
+\renewcommand{\part}[1]{
+    \stepcounter{partcounter}
+    \vspace{0.7em}
+    {\sffamily\bfseries (\alph{partcounter}) #1}
+    \par\vspace{0.3em}
+}
+
+
+%% Miscellaneous
+\renewcommand{\qedsymbol}{\(\blacksquare\)}
+
+
+%% Document metadata
+\newcommand{\coursetitle}{Coursework Sheet \#3}
+\newcommand{\coursecode}{4CCP1300}
+\newcommand{\studentid}{kNumber}
+
+\begin{document}
+
+\begin{flushleft}
+    {\sffamily\bfseries\LARGE\coursetitle\par}
+    \vspace{0.3em}
+    {\sffamily\large\coursecode\text{ / }\studentid\par}
+\end{flushleft}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+\begin{questions}
+
+    \question{Prove the following.}
+    \begin{parts}
+        \part{Show that $1 + 1 = 2$.}
+        Solution to part (a) here.
+
+        \part{Show that $2 + 2 = 4$.}
+        Solution to part (b) here.
+    \end{parts}
+
+    \question{Prove that $\N \subset \Z$.}
+    Solution here.
+
+\end{questions}
+
+\end{document}
