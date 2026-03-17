@@ -89,7 +89,8 @@
 \renewcommand{\part}[1]{
     \stepcounter{partcounter}
     \vspace{0.7em}
-    {\sffamily\bfseries (\alph{partcounter}) #1}
+    {\sffamily\textbf{(\alph{partcounter})}}
+    \ifx&#1&\else\ #1\fi
     \par\vspace{0.3em}
 }
 
